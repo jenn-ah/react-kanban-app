@@ -2,7 +2,7 @@ import React from 'react';
 
 const Card = (props) => {
   const { card_id, title, body, priority, status, created_by, assigned_to } = props;
-  console.log('this is card props', props);
+  //console.log('this is card props', props);
 
   return (
     <div className="oneCard">

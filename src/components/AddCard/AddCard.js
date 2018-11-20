@@ -49,9 +49,12 @@ class AddCard extends Component {
 
   clickHandler() {
     const { addCard } = this.props;
+    console.log('clickHand this', this);
     const { title, body, priority, status, created_by, assigned_to } = this.state;
-
+    console.log('this is clickHand title body', title, body);
+    
     addCard({ title, body, priority, status, created_by, assigned_to });
+    console.log('this is addCard on clickHand', addCard);
 
     this.setState({
       title: '',
