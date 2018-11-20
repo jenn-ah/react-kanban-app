@@ -71,6 +71,7 @@ class AddCard extends Component {
 
     return (
       <div className="add-card-form">
+      <h3>Add New Task</h3>
         Title:
         <input type="text" value={this.state.title} onChange={this.onTitleChange} />
         <br />

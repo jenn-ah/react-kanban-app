@@ -18,10 +18,10 @@ const Column = (props) => {
 
   return (
     <div className='columnContainer'>
-      <h2>{props.title}</h2>
-      <li>
+      <center>
+       <h2>{props.title}</h2>
+      </center>
         {allTasks}
-      </li>
     </div>
   )
 }

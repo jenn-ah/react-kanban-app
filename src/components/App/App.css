@@ -1,6 +1,6 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -8,18 +8,90 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-left: auto;
+  margin-right: auto;
+  height: 15px;
+  font-size: 8pt;
+  padding: 10px;
+  width: 990px;
+  background-color: rgb(75, 81, 89);
   color: white;
+
+  /* display: flex;
+  flex-direction: column;
+  flex-flow: wrap; */
+}
+
+.cardStats {
+  font-size: 8pt;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.columnContainer {
+display: flex;
+flex-flow: row wrap;
+}
+
+.queueDiv {
+  margin-left: -45px;
+  font-size: 11pt;
+  display: inline-block;
+  border-radius: 3px;
+  margin-top: 30px;
+  margin-right: 27px;
+  padding: 8px;
+  width: 295px;
+  color: black;
+  background-color: #ffe6cc;
+  border: 1px solid #ffbf80;
+}
+
+.progressDiv {
+  font-size: 11pt;
+  display: inline-block;
+  border-radius: 3px;
+  margin-top: 30px;
+  margin-right:27px;
+  padding: 8px;
+  width: 295px;
+  color: black;
+  background-color: #ccffeb;
+  border: 1px solid #00ff99;
+}
+
+.doneDiv {
+  font-size: 11pt;
+  display: inline-block;
+  border-radius: 3px;
+  margin-top: 30px;
+  /* margin: 4px; */
+  padding: 8px;
+  width: 295px;
+  color: black;
+  background-color: #f2f2f2;
+  border: 1px solid #bfbfbf;
+}
+
+.oneCard {
+  border: 1px solid;
+  width: 290px;
+  height: auto;
+  padding: 8px;
+  margin: 10px;
+  border-radius: 3px;
+}
+
+.createdByDiv {
+  font-size: 8pt;
+  float: right;
+}
+
+.add-card-form {
+  background-color: grey;
+  align-content: center;
 }
 
 @keyframes App-logo-spin {

@@ -7,12 +7,18 @@ const Board = (props) => {
   //console.log('this is board props', props);
 
   return (
-    <ul>
-      <Column title="Queue" data={props.data} />
-      <Column title="In Progress" data={props.data} />
-      <Column title="Done" data={props.data} />
+      <ul>
+      <div className="queueDiv">
+        <Column title="Queue" data={props.data} />
+      </div>
+      <div className="progressDiv">
+        <Column title="In Progress" data={props.data} />
+      </div>
+      <div className="doneDiv">
+        <Column title="Done" data={props.data} />
+      </div>
       <AddCard addCard={props.addCard} />
-    </ul>
+      </ul>
   )
 }
 

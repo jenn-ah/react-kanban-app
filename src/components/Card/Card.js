@@ -6,14 +6,24 @@ const Card = (props) => {
 
   return (
     <div className="oneCard">
-      <li>ID: {card_id}</li>
-      <li>Title: {title}</li>
-      <li>Body: {body} </li>
-      <li>Priority: {priority} </li>
-      <li>Status: {status} </li>
-      <li>Created By: {created_by}</li>
-      <li>Assigned To: {assigned_to}</li>
       <br />
+      {card_id}
+      <br />
+      <b>{title}</b>
+      <br />
+      {body}
+      <br />
+        <div className="cardStats">
+          Priority: {priority}
+          <br />
+          Status: {status}
+          <br />
+          Assigned To: {assigned_to}
+          <br />
+          <div className="createdByDiv">
+           {created_by}
+          </div>
+        </div>
     </div>
   )
 }

@@ -76,38 +76,38 @@ class App extends Component {
       // currentId: 104,
       [{
         card_id: 100,
-        title: 'Write a Book',
+        title: 'Write A Book',
         body: 'Thinking about writing a book, need to carve out some time in my day to make this happen.',
-        priority: 'medium',
+        priority: 'Medium',
         status: 'In Progress',
-        created_by: 'Person NumberOne',
+        created_by: 'Jenn',
         assigned_to: 'Staff Number1'
       },
       {
         card_id: 101,
-        title: 'Start a Blog',
+        title: 'Start A Blog',
         body: 'Want to start a blog and need to carve out some time in my day to make this happen.',
-        priority: 'low',
+        priority: 'Low',
         status: 'Done',
-        created_by: 'Person NumberTwo',
+        created_by: 'Jenn',
         assigned_to: 'Staff Number2'
       },
       {
         card_id: 102,
-        title: 'Opening up a Business',
+        title: 'Opening Up A Business',
         body: 'Setting up the grand opening of my new store, need to carve out some time in my day to make this happen.',
-        priority: 'high',
+        priority: 'High',
         status: 'In Progress',
-        created_by: 'Person NumberThree',
+        created_by: 'Jenn',
         assigned_to: 'Staff Number3'
       },
       {
         card_id: 103,
-        title: 'Help with homework',
+        title: 'Help With Homework',
         body: 'Stuck on some problems on my homework, need to carve out some time in my day to make this happen.',
-        priority: 'low',
+        priority: 'Low',
         status: 'Queue',
-        created_by: 'Person NumberFour',
+        created_by: 'Jenn',
         assigned_to: 'unassigned'
       }];
     this.props.loadCards(mockCards);
@@ -117,8 +117,10 @@ class App extends Component {
 
     return (
       <div className="App-header">
-        <h1>Kanban Board</h1>
-        <Board data={this.props.cards} />
+        KANBAN
+        <div className="columnContainer">
+          <Board data={this.props.cards} />
+        </div>
       </div>
     );
   }
