@@ -73,21 +73,27 @@ class AddCard extends Component {
       <div className="add-card-form">
       <h3>Add New Task</h3>
         Title:
+        <br />
         <input type="text" value={this.state.title} onChange={this.onTitleChange} />
         <br />
         Body:
+        <br />
         <input type="text" value={this.state.body} onChange={this.onBodyChange} />
         <br />
         Priority:
+        <br />
         <input type="text" value={this.state.priority} onChange={this.onPriorityChange} />
         <br />
         Status:
+        <br />
         <input type="text" value={this.state.status} onChange={this.onStatusChange} />
         <br />
         Created By:
+        <br />
         <input type="text" value={this.state.created_by} onChange={this.onCreatedChange} />
         <br />
         Assigned To:
+        <br />
         <input type="text" value={this.state.assigned_to} onChange={this.onAssignedChange} />
         <br />
 
