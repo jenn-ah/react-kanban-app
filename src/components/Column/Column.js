@@ -4,10 +4,10 @@ import Card from '../Card';
 //column generates cards based on where they will be distributed
 
 const Column = (props) => {
-  // console.log('this is column props', props);
+   console.log('this is column props', props);
   const tasks = props.data;
   const allTasks = tasks.filter(element => {
-    //console.log('this is element alltasks', element);
+    console.log('this is element alltasks', element);
     return element.status === props.title;
   })
     .map(task => {

@@ -1,10 +1,9 @@
 import React from 'react';
-
 import Column from '../Column';
 import AddCard from '../AddCard';
 
 const Board = (props) => {
-  //console.log('this is board props', props);
+  console.log('this is board props', props);
 
   return (
       <ul>
