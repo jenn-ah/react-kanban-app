@@ -4,7 +4,7 @@ import Card from '../Card';
 //column generates cards based on where they will be distributed
 
 const Column = (props) => {
-   //console.log('this is column props', props);
+   console.log('this is column props', props);
    //console.log('this props status', props.title);
   const tasks = props.data;
   console.log('this is tasks', tasks);
@@ -14,7 +14,7 @@ const Column = (props) => {
   })
     .map(task => {
       //console.log('this is task props status', props.title);
-      return (<Card key={task.id} title={task.title} body={task.body} priority={task.priority} status={props.title} created_by={task.created_by} assigned_to={task.assigned_to} />
+      return (<Card key={task.id} title={task.title} body={task.body} priority={task.priority.name} status={task.status.name} created_by={task.created_by} assigned_to={task.assigned_to} />
       );
     })
 
