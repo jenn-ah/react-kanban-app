@@ -1,4 +1,5 @@
 import React from 'react';
+import Status from '../Status';
 
 const Card = (props) => {
   const { title, body, priority, status, created_by, assigned_to } = props;
@@ -14,7 +15,14 @@ const Card = (props) => {
         <div className="cardStats">
           Priority: {priority}
           <br />
+          {/* <Status status={props.status} /> */}
           Status: {status}
+    {/* <FormGroup controlId="formControlsSelect">
+      <ControlLabel>Select</ControlLabel>
+      <FormControl componentClass="select" placeholder="select">
+        <option value="select">select</option>
+        <option value="other">...</option>
+      </FormControl> */}
           <br />
           Assigned To: {assigned_to}
           <br />

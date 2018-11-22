@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
 import { addCard } from '../../actions/cardActions';
 
 class AddCard extends Component {
@@ -65,25 +64,7 @@ class AddCard extends Component {
       created_by: this.state.created_by,
       assigned_to: this.state.assigned_to
     }
-    axios.post('/api/cards', data)
-      .then(response => {
-        const card = response.data;
-        console.log('card', card);
-
-        this.props.addCard(card);
-
-        this.setState({
-          title: '',
-          body: '',
-          priority: '',
-          status: '',
-          created_by: '',
-          assigned_to: ''
-        })
-      })
-      .catch(err => {
-        console.log(err);
-      })
+      this.props.addCard(data);
   }
 
   render() {

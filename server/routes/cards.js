@@ -5,26 +5,30 @@ const Card = require('../db/models/Card');
 
 router.route('/')
   .get((req, res) => {
-    return Card.fetchAll()
+    return Card.fetchAll({withRelated: ['priority', 'status']})
       .then(cards => {
+        console.log('this is cards route', cards);
         return res.json(cards);
       })
       .catch(err => {
+        console.log('this is err', err);
         return res.status(400).send('An error ocurred');
       })
-  })
+  }) //.post route is working, tested through postman
   .post((req, res) => {
-    const { title, body, priority, status, created_by, assigned_to } = req.body;
+    console.log('this req body', req.body);
+    const { title, body, priority_id, status_id, created_by, assigned_to } = req.body;
     return new Card({
       title,
       body,
-      priority,
-      status,
+      priority_id,
+      status_id,
       created_by,
       assigned_to
     })
       .save()
       .then(card => {
+        console.log('this card', card);
         return res.json(card);
       })
       .catch(err => {
