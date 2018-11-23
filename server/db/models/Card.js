@@ -8,11 +8,11 @@ class Card extends bookshelf.Model {
   get tableName() { return 'cards'; }
   get hasTimestamps() { return true; }
 
-  created() {
+  createdBy() {
     return this.hasOne('User', 'id', 'created_by');
   }
 
-  assigned() {
+  assignedTo() {
     return this.hasOne('User', 'id', 'assigned_to');
   }
 

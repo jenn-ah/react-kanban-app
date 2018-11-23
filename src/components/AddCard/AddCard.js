@@ -32,12 +32,12 @@ class AddCard extends Component {
         this.setState({ body: event.target.value });
         break;
 
-      case 'priority':
-        this.setState({ priority: event.target.value });
+      case 'priority_id':
+        this.setState({ priority_id: event.target.value });
         break;
 
-      case 'status':
-        this.setState({ status: event.target.value });
+      case 'status_id':
+        this.setState({ status_id: event.target.value });
         break;
 
       case 'created_by':
@@ -59,8 +59,8 @@ class AddCard extends Component {
     const data = {
       title: this.state.title,
       body: this.state.body,
-      priority: this.state.priority,
-      status: this.state.status,
+      priority_id: this.state.priority_id,
+      status_id: this.state.status_id,
       created_by: this.state.created_by,
       assigned_to: this.state.assigned_to
     }
@@ -82,11 +82,11 @@ class AddCard extends Component {
         <br />
         Priority:
         <br />
-        <input type="text" id="priority" value={this.state.priority} onChange={this.handleInputChange} />
+        <input type="text" id="priority_id" value={this.state.priority_id} onChange={this.handleInputChange} />
         <br />
         Status:
         <br />
-        <input type="text" id="status" value={this.state.status} onChange={this.handleInputChange} />
+        <input type="text" id="status_id" value={this.state.status_id} onChange={this.handleInputChange} />
         <br />
         Created By:
         <br />

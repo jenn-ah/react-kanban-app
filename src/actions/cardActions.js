@@ -31,4 +31,4 @@ export const addCard = (card) => {
       })
       .catch(err => console.error(err));
   }
-  }
+}
