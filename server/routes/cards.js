@@ -45,27 +45,32 @@ router.route('/')
       });
   })
   .put((req, res) => {
-    const { id, title, body, priority_id, status_id, created_by, assigned_to } = req.body;
+    const { id, title, body, priority, status, created_by, assigned_to } = req.body;
     const parsedId = parseInt(id);
-    const parsedPriority = parseInt(priority_id);
-    const parsedStatus = parseInt(status_id);
+    const parsedPriority = parseInt(priority);
+    const parsedStatus = parseInt(status);
     const parsedCreated = parseInt(created_by);
     const parsedAssigned = parseInt(assigned_to);
-    console.log('this is put reqid', id);
     return new Card()
       .where({ id: parsedId })
       .fetch({ require: true })
       .then(card => {
         console.log('this is putcard', card);
-        card.save({
-          title,
-          body,
+        card.save(
+          // [{
+            {
+          title: title,
+          body: body,
           priority_id: parsedPriority,
           status_id: parsedStatus,
           created_by: parsedCreated,
           assigned_to: parsedAssigned
-        })
+            })
+        // }], 
+        //   [{ patch: true }]
+        //   )
           .then(card => {
+            console.log('after first then, putCard', card);
             return card.refresh({ withRelated: ['priority', 'status', 'createdBy', 'assignedTo'] })
           })
           .then(card => {

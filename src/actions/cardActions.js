@@ -35,6 +35,7 @@ export const addCard = (card) => {
 }
 
 export const editCard = (card) => {
+  console.log('axios card', card);
   return dispatch => {
     return axios.put(API_CARDS_URL, card)
       .then(response => {

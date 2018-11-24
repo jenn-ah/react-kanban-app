@@ -55,7 +55,7 @@ class EditCard extends Component {
 
   editNewCard(event) {
     event.preventDefault();
-
+    console.log('this id', this.state.priority_id);
     const data = {
       id: this.state.id,
       title: this.state.title,
@@ -65,6 +65,7 @@ class EditCard extends Component {
       created_by: this.state.created_by,
       assigned_to: this.state.assigned_to
     }
+    console.log('this editNewcard data', data);
       this.props.editCard(data);
   }
 
@@ -90,7 +91,6 @@ class EditCard extends Component {
             value={this.state.priority_id}
             onChange={this.handleInputChange}
           >
-            <option value="">Priority</option>
             <option value="1">Low</option>
             <option value="2">Medium</option>
             <option value="3">High</option>
@@ -105,7 +105,7 @@ class EditCard extends Component {
             value={this.state.status_id}
             onChange={this.handleInputChange}
           >
-            <option value="">Status</option>
+            {/* <option value={this.state.status_id}>{this.state.status_id}</option> */}
             <option value="1">Queue</option>
             <option value="2">In Progress</option>
             <option value="3">Done</option>
@@ -118,7 +118,7 @@ class EditCard extends Component {
             value={this.state.created_by}
             onChange={this.handleInputChange}
           >
-            <option value="">Created By </option>
+            {/* <option value="">Created By </option> */}
             <option value="1">Johnny</option>
             <option value="2">Sid</option>
             <option value="3">Glen</option>
@@ -133,7 +133,7 @@ class EditCard extends Component {
             value={this.state.assigned_to}
             onChange={this.handleInputChange}
           >
-            <option value="">Assigned To </option>
+            {/* <option value="">Assigned To </option> */}
             <option value="1">Johnny</option>
             <option value="2">Sid</option>
             <option value="3">Glen</option>
