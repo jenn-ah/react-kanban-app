@@ -45,16 +45,18 @@ router.route('/')
       });
   })
   .put((req, res) => {
-    const { title, body, priority_id, status_id, created_by, assigned_to } = req.body;
+    const { id, title, body, priority_id, status_id, created_by, assigned_to } = req.body;
+    const parsedId = parseInt(id);
     const parsedPriority = parseInt(priority_id);
     const parsedStatus = parseInt(status_id);
     const parsedCreated = parseInt(created_by);
     const parsedAssigned = parseInt(assigned_to);
-
+    console.log('this is put reqid', id);
     return new Card()
-      //  .where()
+      .where({ id: parsedId })
       .fetch({ require: true })
       .then(card => {
+        console.log('this is putcard', card);
         card.save({
           title,
           body,

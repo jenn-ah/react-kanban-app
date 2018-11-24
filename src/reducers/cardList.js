@@ -10,9 +10,12 @@ const cardList = (state = initialState, action) => {
       return [...state, action.card];
 
     case EDIT_CARD:
-      const newState = [...state];
-    //can use splice, looknfor id, swap out card then return
-      return newState;
+      //const newState = [...state];
+      return [...state.filter(card => card.id !== action.card.id),
+        Object.assign({}, action.card)
+      ]
+    //can use splice, look for id, swap out card then return
+      // return newState;
       
     default:
       return state;

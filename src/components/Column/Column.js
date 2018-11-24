@@ -1,7 +1,6 @@
 import React from 'react';
 import Card from '../Card';
 
-
 //column generates cards based on where they will be distributed
 
 const Column = (props) => {
@@ -16,7 +15,7 @@ const Column = (props) => {
     .map(task => {
       console.log('this is map task', task);
       return (<Card
-        key={task.id}
+        id={task.id}
         title={task.title}
         body={task.body}
         priority={task.priority.name}

@@ -22,6 +22,10 @@
   flex-flow: wrap; */
 }
 
+.idDiv {
+  display: none;
+}
+
 .cardStats {
   font-size: 8pt;
 }
@@ -89,6 +93,11 @@ flex-flow: row wrap;
   float: right;
 }
 
+.dropDowns {
+  width: 120px;
+  background: rgba(255,255,255,0.5);
+}
+
 .add-card-form {
 
   padding: 15px;
@@ -105,8 +114,8 @@ flex-flow: row wrap;
 
 input[type="text"] {
   align-self: right;
-  opacity: 0.7;
-  border: 1px solid #99ccff;
+  background: rgba(255,255,255,0.5);
+  border: 1px solid darkgray;
   width: 120px;
 
 }

@@ -7,11 +7,6 @@ import { loadCards } from '../../actions/cardActions';
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    //create binds here
-  }
   //create methods here
 
   componentDidMount() {
