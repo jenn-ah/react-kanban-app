@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const Card = require('./db/models/Card');
 const cardsRouter = require('./routes/cards');
 
-
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));

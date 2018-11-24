@@ -1,5 +1,10 @@
 import React from 'react';
-import Status from '../Status';
+import EditCard from '../EditCard';
+
+
+
+
+
 
 const Card = (props) => {
   const { title, body, priority, status, created_by, assigned_to } = props;
@@ -28,6 +33,10 @@ const Card = (props) => {
           <br />
           <div className="createdByDiv">
            {created_by}
+          </div>
+          <div className="editDelete">
+            Edit || Delete
+            <EditCard />
           </div>
         </div>
     </div>

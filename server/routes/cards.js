@@ -43,7 +43,38 @@ router.route('/')
       .catch(err => {
         return res.status(400).json({ message: err.message, code: err.code });
       });
-  });
+  })
+  .put((req, res) => {
+    const { title, body, priority_id, status_id, created_by, assigned_to } = req.body;
+    const parsedPriority = parseInt(priority_id);
+    const parsedStatus = parseInt(status_id);
+    const parsedCreated = parseInt(created_by);
+    const parsedAssigned = parseInt(assigned_to);
+
+    return new Card()
+      //  .where()
+      .fetch({ require: true })
+      .then(card => {
+        card.save({
+          title,
+          body,
+          priority_id: parsedPriority,
+          status_id: parsedStatus,
+          created_by: parsedCreated,
+          assigned_to: parsedAssigned
+        })
+          .then(card => {
+            return card.refresh({ withRelated: ['priority', 'status', 'createdBy', 'assignedTo'] })
+          })
+          .then(card => {
+            console.log('this card', card);
+            return res.json(card);
+          })
+          .catch(err => {
+            return res.status(400).json({ message: err.message, code: err.code });
+          });
+      })
+  })
 
 
 

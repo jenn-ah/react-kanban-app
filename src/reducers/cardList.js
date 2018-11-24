@@ -1,4 +1,4 @@
-import { LOAD_CARDS, ADD_CARD } from '../actions/cardActions';
+import { LOAD_CARDS, ADD_CARD, EDIT_CARD } from '../actions/cardActions';
 const initialState = [];
 
 const cardList = (state = initialState, action) => {
@@ -8,6 +8,11 @@ const cardList = (state = initialState, action) => {
 
     case ADD_CARD:
       return [...state, action.card];
+
+    case EDIT_CARD:
+      const newState = [...state];
+    //can use splice, looknfor id, swap out card then return
+      return newState;
       
     default:
       return state;

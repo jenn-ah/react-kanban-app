@@ -11,20 +11,8 @@ class App extends Component {
     super(props);
 
     //create binds here
-    this.addCard = this.addCard.bind(this);
   }
   //create methods here
-  addCard({ title, body, priority_id, status_id, created_by, assigned_to }) {
-    const card_id = this.state.currentId;
-    const { cards } = this.state;
-    console.log('this is addCard cards', cards);
-    const newCard = { title, body, priority_id, status_id, created_by, assigned_to };
-
-    this.setState({
-      //currentId: card_id + 1,
-      cards: [...cards, newCard]
-    });
-  }
 
   componentDidMount() {
     console.log('CDM firing!');
