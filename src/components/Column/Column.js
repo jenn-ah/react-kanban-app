@@ -19,7 +19,9 @@ const Column = (props) => {
         title={task.title}
         body={task.body}
         priority={task.priority.name}
+        priority_id={task.priority_id}
         status={task.status.name}
+        status_id={task.status_id}
         created_by={task.createdBy.first_name}
         assigned_to={task.assignedTo.first_name}
       />

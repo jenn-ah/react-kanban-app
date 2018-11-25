@@ -7,11 +7,11 @@ class AddCard extends Component {
     super(props);
 
     this.state = {
-      card_id: 0,
+      id: 0,
       title: '',
       body: '',
-      priority: '',
-      status: '',
+      priority_id: '',
+      status_id: '',
       created_by: '',
       assigned_to: ''
     }
@@ -57,6 +57,7 @@ class AddCard extends Component {
     event.preventDefault();
 
     const data = {
+      id: this.state.id,
       title: this.state.title,
       body: this.state.body,
       priority_id: this.state.priority_id,
@@ -72,6 +73,9 @@ class AddCard extends Component {
     return (
       <div className="add-card-form">
       <h3>Add New Task</h3>
+        <div className="idDiv">
+        <input readOnly type="text" id="id" value={this.state.id} />
+        </div>
         Title:
         <br />
         <input type="text" id="title" value={this.state.title} onChange={this.handleInputChange} />

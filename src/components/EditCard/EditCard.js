@@ -5,7 +5,9 @@ import { editCard } from '../../actions/cardActions';
 class EditCard extends Component {
   constructor(props) {
     super(props);
+
     console.log('this editCard this.props', props.data);
+
     this.state = {
       id: props.data.id,
       title: props.data.title,
@@ -55,7 +57,7 @@ class EditCard extends Component {
 
   editNewCard(event) {
     event.preventDefault();
-    console.log('this id', this.state.priority_id);
+    //console.log('this id', this.state.priority_id);
     const data = {
       id: this.state.id,
       title: this.state.title,
@@ -65,12 +67,16 @@ class EditCard extends Component {
       created_by: this.state.created_by,
       assigned_to: this.state.assigned_to
     }
-    console.log('this editNewcard data', data);
       this.props.editCard(data);
   }
 
   render() {
-
+    // let statusString = '';
+    // const status = this.state.status_id;
+    // if (status) {
+    //   statusString = status.toString();
+    // }
+    // console.log('statusString', statusString);
     return (
       <div className="edit-card-form">
         <div className="idDiv">
@@ -91,6 +97,7 @@ class EditCard extends Component {
             value={this.state.priority_id}
             onChange={this.handleInputChange}
           >
+            {/* <option value={this.state.priority_id}>{this.state.priority_id}</option> */}
             <option value="1">Low</option>
             <option value="2">Medium</option>
             <option value="3">High</option>
