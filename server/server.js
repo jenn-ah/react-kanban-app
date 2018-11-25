@@ -13,10 +13,11 @@ app.get('/', (req, res) => {
   return Card.fetchAll()
     .then(cards => {
       //const results = cards.toJSON();
-      console.log('this is cards-server', results);
+      //console.log('this is cards-server', results);
       return res.json(cards);
     })
     .catch(err => {
+      console.log('this err', err)
       return res.status(400).send('An error ocurred');
     })
 });

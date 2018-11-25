@@ -3,7 +3,7 @@ import Column from '../Column';
 
 
 const Board = (props) => {
-  console.log('this is board props', props);
+ // console.log('this is board props', props);
 
   return (
       <ul>

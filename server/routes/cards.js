@@ -15,15 +15,15 @@ router.route('/')
         console.log('this is err', err);
         return res.status(400).send('An error ocurred');
       })
-  }) //.post route is working, tested through postman
+  })
   .post((req, res) => {
-    console.log('this req body', req.body);
+   // console.log('this req body', req.body);
     const { title, body, priority_id, status_id, created_by, assigned_to } = req.body;
     const parsedPriority = parseInt(priority_id);
     const parsedStatus = parseInt(status_id);
     const parsedCreated = parseInt(created_by);
     const parsedAssigned = parseInt(assigned_to);
-    console.log('this status', status_id);
+    //console.log('this status', status_id);
     return new Card({
       title,
       body,
@@ -37,7 +37,7 @@ router.route('/')
         return card.refresh({ withRelated: ['priority', 'status', 'createdBy', 'assignedTo'] })
       })
       .then(card => {
-        console.log('this card', card);
+        //console.log('this card', card);
         return res.json(card);
       })
       .catch(err => {
@@ -51,30 +51,31 @@ router.route('/')
     const parsedStatus = parseInt(status);
     const parsedCreated = parseInt(created_by);
     const parsedAssigned = parseInt(assigned_to);
+   // console.log('this reqbody', req.body);
     return new Card()
       .where({ id: parsedId })
       .fetch({ require: true })
       .then(card => {
-        console.log('this is putcard', card);
+       // console.log('this is putcard', card);
         card.save(
           // [{
-            {
-          title: title,
-          body: body,
-          priority_id: parsedPriority,
-          status_id: parsedStatus,
-          created_by: parsedCreated,
-          assigned_to: parsedAssigned
-            })
-        // }], 
-        //   [{ patch: true }]
-        //   )
+          {
+            title: title,
+            body: body,
+            priority_id: parsedPriority,
+            status_id: parsedStatus,
+            created_by: parsedCreated,
+            assigned_to: parsedAssigned
+          })
+          // }], 
+          //   [{ patch: true }]
+          //   )
           .then(card => {
-            console.log('after first then, putCard', card);
+            //console.log('after first then, putCard', card);
             return card.refresh({ withRelated: ['priority', 'status', 'createdBy', 'assignedTo'] })
           })
           .then(card => {
-            console.log('this card', card);
+            //console.log('this card', card);
             return res.json(card);
           })
           .catch(err => {

@@ -6,7 +6,7 @@ class EditCard extends Component {
   constructor(props) {
     super(props);
 
-    console.log('this editCard this.props', props.data);
+   // console.log('this editCard this.props', props.data);
 
     this.state = {
       id: props.data.id,
@@ -15,7 +15,10 @@ class EditCard extends Component {
       priority_id: props.data.priority_id,
       status_id: props.data.status_id,
       created_by: props.data.created_by,
-      assigned_to: props.data.assigned_to
+      createName: props.data.createName,
+      assigned_to: props.data.assigned_to,
+      assignName: props.data.assignName
+
     }
     //create binds here
 
@@ -57,7 +60,6 @@ class EditCard extends Component {
 
   editNewCard(event) {
     event.preventDefault();
-    //console.log('this id', this.state.priority_id);
     const data = {
       id: this.state.id,
       title: this.state.title,
@@ -67,16 +69,12 @@ class EditCard extends Component {
       created_by: this.state.created_by,
       assigned_to: this.state.assigned_to
     }
+    //console.log('this editnewcard data', data);
       this.props.editCard(data);
   }
 
   render() {
-    // let statusString = '';
-    // const status = this.state.status_id;
-    // if (status) {
-    //   statusString = status.toString();
-    // }
-    // console.log('statusString', statusString);
+
     return (
       <div className="edit-card-form">
         <div className="idDiv">
@@ -125,7 +123,6 @@ class EditCard extends Component {
             value={this.state.created_by}
             onChange={this.handleInputChange}
           >
-            {/* <option value="">Created By </option> */}
             <option value="1">Johnny</option>
             <option value="2">Sid</option>
             <option value="3">Glen</option>

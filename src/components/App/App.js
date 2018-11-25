@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   render() {
-    console.log('this.props in APP', this.props)
+   // console.log('this.props in APP', this.props)
     return (
       <div className="App-header">
         KANBAN

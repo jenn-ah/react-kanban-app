@@ -16,7 +16,6 @@ class AddCard extends Component {
       assigned_to: ''
     }
     //create binds here
-
     this.handleInputChange = this.handleInputChange.bind(this);
     this.addNewCard = this.addNewCard.bind(this);
   }
