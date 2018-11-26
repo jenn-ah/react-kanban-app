@@ -44,15 +44,17 @@ class Card extends Component {
 
               Assigned To: {this.props.assignName}
               <br />
+              <br />
 
               <div className="createdByDiv">
                 {this.props.createName}
+  
               </div>
             </div>
           </div>
 
           <div className="editDelete">
-            <button id="edit_button" onClick={this.toggleEditing}>
+            <button className="btnz" id="edit_button" onClick={this.toggleEditing}>
               Edit
               </button>
           </div>

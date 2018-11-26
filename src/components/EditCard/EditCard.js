@@ -82,11 +82,11 @@ class EditCard extends Component {
         </div>
         Title:
         <br />
-        <input type="text" id="title" value={this.state.title} onChange={this.handleInputChange} />
+        <input type="text" id="title" className="editFormInput" value={this.state.title} onChange={this.handleInputChange} />
         <br />
         Body:
         <br />
-        <input type="text" id="body" value={this.state.body} onChange={this.handleInputChange} />
+        <input type="text" id="body" className="editFormInput" value={this.state.body} onChange={this.handleInputChange} />
         <br />
         Priority:
         <br />
@@ -146,8 +146,8 @@ class EditCard extends Component {
           </select>
         <br />
         <br />
-        <button onClick={this.editNewCard}>
-          Edit Card
+        <button className="btnz" onClick={this.editNewCard}>
+          Update Card
         </button>
       </div>
     );

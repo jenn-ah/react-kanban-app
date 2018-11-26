@@ -100,7 +100,7 @@ class AddCard extends Component {
         <input type="text" id="assigned_to" value={this.state.assigned_to} onChange={this.handleInputChange} />
         <br />
 
-        <button onClick={this.addNewCard}>
+        <button className="btnz" onClick={this.addNewCard}>
           Add Card
         </button>
       </div>

@@ -8,9 +8,8 @@ export const EDIT_CARD = 'EDIT_CARD';
 const API_CARDS_URL = '/api/cards';
 
 export const loadCards = () => {
-  console.log('test loadCards');
+ // console.log('test loadCards');
   return dispatch => {
-    //dispatch(setFormingTrue());
     return axios.get(API_CARDS_URL)
       .then(response => {
         const cards = response.data;
@@ -25,6 +24,7 @@ export const loadCards = () => {
 
 export const addCard = (card) => {
   return dispatch => {
+    // dispatch(setFormingTrue());
     return axios.post(API_CARDS_URL, card)
       .then(response => {
         const card = response.data;
@@ -38,7 +38,7 @@ export const addCard = (card) => {
 }
 
 export const editCard = (card) => {
-  console.log('axios card', card);
+ // console.log('axios card', card);
   return dispatch => {
     return axios.put(API_CARDS_URL, card)
       .then(response => {

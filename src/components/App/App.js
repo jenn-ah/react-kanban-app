@@ -10,7 +10,7 @@ import FormModal from '../FormModal';
 class App extends Component {
   constructor(props) {
     super(props);
-    console.log('this first props', props);
+   // console.log('this first props', props);
   //create methods here
   }
 
@@ -20,24 +20,27 @@ class App extends Component {
   }
 
   render() {
-  console.log('this.props in APP', this.props)
+  //console.log('this.props in APP', this.props)
    const isForming = this.props.isForming.isForming;
     return (
       <div className="App-header">
         KANBAN
-        <div className="columnContainer">
+        <div className="newTaskHeader">
+        + NEW TASK
+        </div>
+        {/* <div className="columnContainer"> */}
           {/* <Board data={this.props.cards} /> */}
           <Board cards={this.props.cards} />
           <FormModal isForming={isForming} />
           {/* <AddCard /> */}
         </div>
-      </div>
+      //  </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  console.log('mapstate state', state);
+  //console.log('mapstate state', state);
   return {
     cards: state,
     isForming: state.isForming

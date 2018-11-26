@@ -3,7 +3,7 @@ import './FormModal.css';
 import AddCard from '../AddCard';
 
 const FormModal = (props) => {
-  console.log('formModal props', props);
+  //console.log('formModal props', props);
    const { isForming } = props;
 
   //const isLoading = true;
