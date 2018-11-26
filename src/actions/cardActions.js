@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { setFormingTrue, setFormingFalse } from './formingActions';
 
 export const LOAD_CARDS = 'LOAD_CARDS';
 export const ADD_CARD = 'ADD_CARD';
@@ -7,7 +8,9 @@ export const EDIT_CARD = 'EDIT_CARD';
 const API_CARDS_URL = '/api/cards';
 
 export const loadCards = () => {
+  console.log('test loadCards');
   return dispatch => {
+    //dispatch(setFormingTrue());
     return axios.get(API_CARDS_URL)
       .then(response => {
         const cards = response.data;
