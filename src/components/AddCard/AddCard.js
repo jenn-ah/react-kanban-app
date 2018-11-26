@@ -20,7 +20,6 @@ class AddCard extends Component {
     this.addNewCard = this.addNewCard.bind(this);
   }
   //methods here
-
   handleInputChange(event) {
     switch (event.target.id) {
       case 'title':
@@ -85,21 +84,59 @@ class AddCard extends Component {
         <br />
         Priority:
         <br />
-        <input type="text" id="priority_id" value={this.state.priority_id} onChange={this.handleInputChange} />
+        <select className="dropDowns"
+            id="priority_id"
+            value={this.state.priority_id}
+            onChange={this.handleInputChange}
+          >
+            <option value="1">Low</option>
+            <option value="2">Medium</option>
+            <option value="3">High</option>
+            <option value="4">Urgent</option>
+            <option value="5">Emergency</option>
+          </select>
         <br />
         Status:
         <br />
-        <input type="text" id="status_id" value={this.state.status_id} onChange={this.handleInputChange} />
+        <select className="dropDowns"
+            id="status_id"
+            value={this.state.status_id}
+            onChange={this.handleInputChange}
+          >
+            <option value="1">Queue</option>
+            <option value="2">In Progress</option>
+            <option value="3">Done</option>
+          </select>
         <br />
         Created By:
         <br />
-        <input type="text" id="created_by" value={this.state.created_by} onChange={this.handleInputChange} />
+        <select className="dropDowns"
+            id="created_by"
+            value={this.state.created_by}
+            onChange={this.handleInputChange}
+          >
+            <option value="1">Johnny</option>
+            <option value="2">Sid</option>
+            <option value="3">Glen</option>
+            <option value="4">Steve</option>
+            <option value="5">Paul</option>
+          </select>
         <br />
         Assigned To:
         <br />
-        <input type="text" id="assigned_to" value={this.state.assigned_to} onChange={this.handleInputChange} />
+        <select className="dropDowns"
+            id="assigned_to"
+            value={this.state.assigned_to}
+            onChange={this.handleInputChange}
+          >
+            <option value="1">Johnny</option>
+            <option value="2">Sid</option>
+            <option value="3">Glen</option>
+            <option value="4">Steve</option>
+            <option value="5">Paul</option>
+          </select>
         <br />
-
+        <br />
         <button className="btnz" onClick={this.addNewCard}>
           Add Card
         </button>

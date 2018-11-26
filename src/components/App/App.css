@@ -13,12 +13,12 @@
   margin-left: auto;
   margin-right: auto;
   height: 15px;
-  font-size: 8pt;
+  font-size: 9pt;
   padding: 10px;
   width: 990px;
   background-color: rgb(75, 81, 89);
   color: white;
-
+  font-family: 'Roboto', sans-serif;
 }
 
 .newTaskHeader {
@@ -30,28 +30,29 @@
   border: 1px solid lightgray;
   padding: 5px;
   background-color: rgb(75, 81, 89);
+  font-family: 'Roboto', sans-serif;
 }
 
 .titleHeader {
   font-size: 9pt;
   padding: 10px;
   margin-top: -35px;
-  /* display: inline; */
+  font-family: 'Roboto', sans-serif;
   margin-left: 110px;
 }
 
 .btnz {
   background: none;
   border: none;
+  font-family: 'Roboto', sans-serif;
 }
 
 .btnz:hover {
   background: rgba(255,255,255,0.5);
   color: black;
   font-size: 9pt;
-  /* border: 1px solid darkgrey;  */
+  font-family: 'Roboto', sans-serif;
   transition-duration: 0.3s;
-  /* box-shadow: 0 7px 6px 0 rgba(0,0,0,0.10), 0 7px 5px 0 rgba(0,0,0,0.10); */
 }
 
 .idDiv {
@@ -60,10 +61,12 @@
 
 .cardStats {
   font-size: 8pt;
+  font-family: 'Roboto', sans-serif;
 }
 
 .App-link {
   color: #61dafb;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* .columnDiv {
@@ -72,21 +75,26 @@ flex-flow: row wrap;
 } */
 
 .columnContainer {
-width: 1100px;
-display: flex;
-flex-flow: row wrap;
-height: auto;
+  padding: 0px;
+  width: 1015px;
+  justify-content: space-between;
+  margin-left: -12px;
+  display: flex;
+  flex-flow: row wrap;
+  height: auto;
 }
 
-.column {
+/* .column {
 
-}
+} */
 
 .queueDiv {
-  font-size: 11pt;
+  font-size: 10pt;
+  font-family: 'Roboto', sans-serif;
   margin-top: 50px;
   margin-right: 27px;
   color: black;
+  border-right: 1px solid rgb(75, 81, 89);
 }
 
 .queueDiv .oneCard {
@@ -95,12 +103,10 @@ height: auto;
 }
 
 .progressDiv {
-  font-size: 11pt;
-  border-radius: 3px;
+  font-size: 10pt;
+  font-family: 'Roboto', sans-serif;
   margin-top: 50px;
   margin-right:27px;
-  padding: 10px;
-  width: 295px;
   color: black;
 }
 
@@ -110,13 +116,9 @@ height: auto;
 }
 
 .doneDiv {
-  font-size: 11pt;
-  /* display: inline-block; */
-  border-radius: 3px;
+  font-size: 10pt;
+  font-family: 'Roboto', sans-serif;
   margin-top: 50px;
-  padding: 10px;
-  width: 295px;
-  height: auto;
   color: black;
 }
 
@@ -124,7 +126,6 @@ height: auto;
   background-color: #f2f2f2;
   border: 1px solid #bfbfbf;
 }
-
 
 .oneCard {
   border: 1px solid;
@@ -138,6 +139,7 @@ height: auto;
 
 .createdByDiv {
   font-size: 8pt;
+  font-family: 'Roboto', sans-serif;
   float: right;
 }
 
@@ -147,20 +149,21 @@ height: auto;
 }
 
 .add-card-form {
-
   padding: 15px;
   width: 500px;
   margin-left: 0px;
   margin-top: 50px;
   margin-bottom: 100px;
   color: black;
-  background-color: #e6f2ff;
-  border: 1px solid #99ccff;
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
+  border: 1px solid lightslategray;
   align-content: center;
 }
 
 input[type="text"] {
   align-self: right;
+  font-family: 'Roboto', sans-serif;
   background: rgba(255,255,255,0.5);
   border: 1px solid darkgray;
   width: 120px;
