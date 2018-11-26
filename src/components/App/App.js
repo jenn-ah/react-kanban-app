@@ -5,6 +5,7 @@ import Board from '../Board';
 //import AddCard from '../AddCard';
 import { loadCards } from '../../actions/cardActions';
 import FormModal from '../FormModal';
+import { setFormingTrue, setFormingFalse } from '../../actions/formingActions';
 
 
 class App extends Component {
@@ -23,17 +24,20 @@ class App extends Component {
   //console.log('this.props in APP', this.props)
    const isForming = this.props.isForming.isForming;
     return (
-      <div className="App-header">
+        <div>
+          <FormModal isForming={isForming} hideFormHandler={this.props.hideAddForm}/>
+       <div className="App-header">
         KANBAN
-        <div className="newTaskHeader">
+        <button className="newTaskHeader" onClick={this.props.showAddForm}>
         + NEW TASK
-        </div>
+        </button>
         {/* <div className="columnContainer"> */}
           {/* <Board data={this.props.cards} /> */}
           <Board cards={this.props.cards} />
-          <FormModal isForming={isForming} />
+          
           {/* <AddCard /> */}
         </div>
+          </div>
       //  </div>
     );
   }
@@ -51,6 +55,12 @@ const mapDispatchToProps = (dispatch) => {
   return {
     loadCards: () => {
       dispatch(loadCards());
+    },
+    showAddForm: () => {
+      dispatch(setFormingTrue());
+    },
+    hideAddForm: () => {
+      dispatch(setFormingFalse());
     }
   }
 }

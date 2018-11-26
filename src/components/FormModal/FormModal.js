@@ -4,13 +4,14 @@ import AddCard from '../AddCard';
 
 const FormModal = (props) => {
   //console.log('formModal props', props);
-   const { isForming } = props;
+   const { isForming, hideFormHandler } = props;
 
   //const isLoading = true;
 
   if (isForming) {
     return (
       <div className="formModalDiv">
+        <button onClick={hideFormHandler} className="close-modal">X</button>
         <AddCard />
       </div>
     )

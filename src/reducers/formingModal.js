@@ -3,7 +3,7 @@ import {
     SET_FORMING_FALSE 
   } from '../actions/formingActions';
   
-  const initialState = { isForming: true };
+  const initialState = { isForming: false };
   
   const formingModal = ( state = initialState, action ) => {
     switch (action.type) {

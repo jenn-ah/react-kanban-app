@@ -16,6 +16,7 @@ const Column = (props) => {
      // console.log('this is map task', task);
       return (<Card
         id={task.id}
+        key={task.id}
         title={task.title}
         body={task.body}
         priority={task.priority.name}
