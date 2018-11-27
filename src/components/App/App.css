@@ -45,6 +45,7 @@
   background: none;
   border: none;
   font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
 }
 
 .btnz:hover {
@@ -88,18 +89,26 @@ flex-flow: row wrap;
 
 } */
 
+.queueHolder {
+  border-right: 1px solid rgb(75, 81, 89);
+  height: 700px;
+}
+
 .queueDiv {
   font-size: 10pt;
   font-family: 'Roboto', sans-serif;
   margin-top: 50px;
   margin-right: 15px;
   color: black;
-  /* border-right: 1px solid rgb(75, 81, 89); */
 }
 
 .queueDiv .oneCard {
   background-color: #ffe6cc;
   border: 1px solid #ffbf80;
+}
+
+.progressHolder {
+  border-right: 1px solid rgb(75, 81, 89);
 }
 
 .progressDiv {
@@ -141,6 +150,28 @@ flex-flow: row wrap;
   font-size: 8pt;
   font-family: 'Roboto', sans-serif;
   float: right;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+/* .createdByDiv:hover {
+  font-size: 10pt;
+} */
+
+.createdByDiv .createTipText {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgb(75, 81, 89);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+}
+
+.createdByDiv:hover .createTipText {
+  visibility: visible;
 }
 
 .dropDowns {
@@ -173,7 +204,6 @@ input[type="text"] {
 
 .moveCard {
   display: flex;
-  backface-visibility: inherit;
   justify-content: space-between;
   margin-bottom: -12px;
 }
@@ -191,7 +221,7 @@ input[type="text"] {
 
 .oneCard i {
   border: solid black;
-  border-width: 0 3px 3px 0;
+  border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 3px;
 }
@@ -205,6 +235,7 @@ input[type="text"] {
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
 }
+
 /* .editFormInput {
   align-self: right;
   background: rgba(255,255,255,0.5);

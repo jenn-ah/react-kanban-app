@@ -106,6 +106,7 @@ class Card extends Component {
 
               <div className="createdByDiv">
                 {this.props.createName}
+                <span className="createTipText"><b>Created By</b> {this.props.createName}</span>
 
               </div>
             </div>
@@ -115,7 +116,7 @@ class Card extends Component {
             <button className="btnz" id="edit_button" onClick={this.toggleEditing}>
               Edit
             </button>
-
+              |
             <button className="btnz" id="delete_button" onClick={this.deletingCard}>
               Delete
             </button>
