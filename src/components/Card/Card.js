@@ -124,10 +124,10 @@ class Card extends Component {
           </div>
           <div className="moveCard">
             {statusId > 1 && ( <button className="btnz" id="move_left" onClick={this.moveLeft}>
-              <p><i className="arrow left"></i></p>
+              {/* <p><i className="arrow left"></i></p> */} &lt;
             </button>)}
             {statusId <= 2 && ( <button className="btnz" id="move_right" onClick={this.moveRight}>
-              <p> <i className="arrow right"></i></p>
+              {/* <p> <i className="arrow right"></i></p> */} &gt;
             </button>) }
           </div>
         </div>
