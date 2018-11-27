@@ -6,6 +6,7 @@ const Card = require('../db/models/Card');
 
 router.route('/')
   .get((req, res) => {
+    console.log('get reqbody', req.body);
     return Card.fetchAll({ withRelated: ['priority', 'status', 'createdBy', 'assignedTo'] })
       .then(cards => {
         //console.log('this is cards route', cards);
@@ -17,7 +18,7 @@ router.route('/')
       })
   })
   .post((req, res) => {
-   // console.log('this req body', req.body);
+    // console.log('this req body', req.body);
     const { title, body, priority_id, status_id, created_by, assigned_to } = req.body;
     const parsedPriority = parseInt(priority_id);
     const parsedStatus = parseInt(status_id);
@@ -51,12 +52,12 @@ router.route('/')
     const parsedStatus = parseInt(status);
     const parsedCreated = parseInt(created_by);
     const parsedAssigned = parseInt(assigned_to);
-   // console.log('this reqbody', req.body);
+    // console.log('this reqbody', req.body);
     return new Card()
       .where({ id: parsedId })
       .fetch({ require: true })
       .then(card => {
-       // console.log('this is putcard', card);
+        // console.log('this is putcard', card);
         card.save(
           // [{
           {
@@ -82,6 +83,24 @@ router.route('/')
             return res.status(400).json({ message: err.message, code: err.code });
           });
       })
+  })
+  .delete((req, res) => {
+    //console.log('this delete req', req);
+    const { id } = req.body;
+   // console.log('delete id', id);
+    const parsedId = parseInt(id);
+    return new Card()
+      .where({ id: parsedId })
+      .fetch({ require: true })
+      .then(card => {
+        return card.destroy({
+          id: parsedId
+        })
+      })
+      .then(() => {
+        return res.send(`Card #${id} has been deleted`);
+      })
+      .catch(err => console.error(err));
   })
 
 

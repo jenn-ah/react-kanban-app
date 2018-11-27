@@ -13,7 +13,7 @@ const Column = (props) => {
     return element.status_id === (parseInt(props.id));
   })
     .map(task => {
-     // console.log('this is map task', task);
+      // console.log('this is map task', task);
       return (<Card
         id={task.id}
         key={task.id}
@@ -32,13 +32,10 @@ const Column = (props) => {
     })
 
   return (
-       <div className='cardContainer'>
-         {/* <center>
-    //     <h2>{props.title}</h2>
-    //   </center> */}
-        {allTasks}
-        </div>
-      
+    <div className='cardContainer'>
+      {allTasks}
+    </div>
+
   )
 };
 

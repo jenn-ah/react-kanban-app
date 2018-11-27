@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { editCard } from '../../actions/cardActions';
+import { editCard, deleteCard } from '../../actions/cardActions';
 import EditCard from '../EditCard';
 
 class Card extends Component {
@@ -20,6 +20,7 @@ class Card extends Component {
       assignName: props.assignName
     }
     this.toggleEditing = this.toggleEditing.bind(this);
+    this.deletingCard = this.deletingCard.bind(this);
     this.moveRight = this.moveRight.bind(this);
     this.moveLeft = this.moveLeft.bind(this);
   }
@@ -28,6 +29,22 @@ class Card extends Component {
     this.setState({
       editing: !this.state.editing
     });
+  }
+
+  deletingCard(event) {
+    console.log('props deleting card', this.props);
+    console.log('state deleting card', this.state);
+    //event.preventDefault();
+    const data = {
+      id: this.state.id,
+      title: this.state.title,
+      body: this.state.body,
+      priority_id: this.state.priority_id,
+      status_id: this.state.status_id,
+      created_by: this.state.created_by,
+      assigned_to: this.state.assigned_to
+    }
+    this.props.deleteCard(data);
   }
 
   moveRight(event) {
@@ -98,10 +115,15 @@ class Card extends Component {
             <button className="btnz" id="edit_button" onClick={this.toggleEditing}>
               Edit
             </button>
+
+            <button className="btnz" id="delete_button" onClick={this.deletingCard}>
+              Delete
+            </button>
+
           </div>
           <div className="moveCard">
             {statusId > 1 && ( <button className="btnz" id="move_left" onClick={this.moveLeft}>
-              <p> <i className="arrow left"></i></p>
+              <p><i className="arrow left"></i></p>
             </button>)}
             {statusId <= 2 && ( <button className="btnz" id="move_right" onClick={this.moveRight}>
               <p> <i className="arrow right"></i></p>
@@ -127,6 +149,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     editCard: (card => {
       dispatch(editCard(card));
+    }),
+    deleteCard: (card => {
+      dispatch(deleteCard(card));
     })
   }
 }

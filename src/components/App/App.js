@@ -20,7 +20,7 @@ class App extends Component {
   //console.log('this.props in APP', this.props)
    const isForming = this.props.isForming.isForming;
     return (
-        <div>
+       <div>
           <FormModal isForming={isForming} hideFormHandler={this.props.hideAddForm}/>
        <div className="App-header">
         KANBAN

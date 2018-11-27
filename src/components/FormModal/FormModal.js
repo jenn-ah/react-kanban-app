@@ -11,7 +11,10 @@ const FormModal = (props) => {
   if (isForming) {
     return (
       <div className="formModalDiv">
-        <button onClick={hideFormHandler} className="close-modal">X</button>
+        <div className="closeModalBtn">
+        <button onClick={hideFormHandler} className="close-modal">&times;</button>
+        </div>
+        <br />
         <AddCard />
       </div>
     )
