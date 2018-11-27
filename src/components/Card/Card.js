@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { editCard } from '../../actions/cardActions';
 import EditCard from '../EditCard';
 
-
 class Card extends Component {
   constructor(props) {
     super(props);
@@ -62,7 +61,7 @@ class Card extends Component {
 
   render() {
     //console.log('this classCard props', this.props);
-    console.log('this props status id', this.props.status_id);
+    const statusId = this.props.status_id;
     return (
       <div className="oneCard">
         {!this.state.editing && (<div className="cardParentDiv">
@@ -101,13 +100,12 @@ class Card extends Component {
             </button>
           </div>
           <div className="moveCard">
-            <button className="btnz" id="move_left" onClick={this.moveLeft}>
+            {statusId > 1 && ( <button className="btnz" id="move_left" onClick={this.moveLeft}>
               <p> <i className="arrow left"></i></p>
-            </button>
-
-            <button className="btnz" id="move_right" onClick={this.moveRight}>
+            </button>)}
+            {statusId <= 2 && ( <button className="btnz" id="move_right" onClick={this.moveRight}>
               <p> <i className="arrow right"></i></p>
-            </button>
+            </button>) }
           </div>
         </div>
         )
@@ -118,7 +116,6 @@ class Card extends Component {
     )
   }
 }
-
 
 const mapStateToProps = (state) => {
   return {
