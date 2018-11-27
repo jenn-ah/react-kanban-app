@@ -6,7 +6,7 @@ const Card = require('../db/models/Card');
 
 router.route('/')
   .get((req, res) => {
-    console.log('get reqbody', req.body);
+    //console.log('get reqbody', req.body);
     return Card.fetchAll({ withRelated: ['priority', 'status', 'createdBy', 'assignedTo'] })
       .then(cards => {
         //console.log('this is cards route', cards);

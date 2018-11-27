@@ -39,4 +39,25 @@ router.post('/users', (req, res) => {
 
 
 
+router.get('/users/:id', (req, res) => {
+  const grabId = req.params.id;
+
+  return new User({ id: grabId })
+    .fetch({ 
+      columns: ['id', 'first_name', 'last_name', 'email'],
+      withRelated: ['created', 'assigned']
+    })
+    .then(user => {
+      if(!user) {
+        res.status(404).json({ message: `User # ${grabId} not found.`})
+      } else {
+        //console.log('get user id route', user);
+        const userObj = user.toJSON();
+        return res.send(userObj);
+      }
+    })
+    .catch(err => console.error(err));
+})
+
+
 module.exports = router;

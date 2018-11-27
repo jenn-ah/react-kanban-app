@@ -1,4 +1,5 @@
 const bookshelf = require('./bookshelf');
+require('./Card');
 
 class User extends bookshelf.Model {
 
