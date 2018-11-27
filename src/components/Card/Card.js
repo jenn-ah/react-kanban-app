@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { editCard } from '../../actions/cardActions';
 import EditCard from '../EditCard';
 
 
@@ -9,18 +10,59 @@ class Card extends Component {
 
     this.state = {
       editing: false,
+      id: props.id,
+      title: props.title,
+      body: props.body,
+      priority_id: props.priority_id,
+      status_id: props.status_id,
+      created_by: props.created_by,
+      createName: props.createName,
+      assigned_to: props.assigned_to,
+      assignName: props.assignName
     }
     this.toggleEditing = this.toggleEditing.bind(this);
+    this.moveRight = this.moveRight.bind(this);
+    this.moveLeft = this.moveLeft.bind(this);
   }
 
   toggleEditing(event) {
     this.setState({
-      editing: !this.state.editing,
+      editing: !this.state.editing
     });
   }
 
+  moveRight(event) {
+    event.preventDefault();
+    const data = {
+      id: this.state.id,
+      title: this.state.title,
+      body: this.state.body,
+      priority: this.state.priority_id,
+      status: this.state.status_id + 1,
+      created_by: this.state.created_by,
+      assigned_to: this.state.assigned_to
+    }
+    this.props.editCard(data);
+  }
+
+  moveLeft(event) {
+    event.preventDefault();
+    const data = {
+      id: this.state.id,
+      title: this.state.title,
+      body: this.state.body,
+      priority: this.state.priority_id,
+      status: this.state.status_id - 1,
+      created_by: this.state.created_by,
+      assigned_to: this.state.assigned_to
+    }
+    //console.log('this editnewcard data', data);
+    this.props.editCard(data);
+  }
+
   render() {
-   // console.log('this classCard props', this.props);
+    //console.log('this classCard props', this.props);
+    console.log('this props status id', this.props.status_id);
     return (
       <div className="oneCard">
         {!this.state.editing && (<div className="cardParentDiv">
@@ -48,7 +90,7 @@ class Card extends Component {
 
               <div className="createdByDiv">
                 {this.props.createName}
-  
+
               </div>
             </div>
           </div>
@@ -56,7 +98,16 @@ class Card extends Component {
           <div className="editDelete">
             <button className="btnz" id="edit_button" onClick={this.toggleEditing}>
               Edit
-              </button>
+            </button>
+          </div>
+          <div className="moveCard">
+            <button className="btnz" id="move_left" onClick={this.moveLeft}>
+              <p> <i className="arrow left"></i></p>
+            </button>
+
+            <button className="btnz" id="move_right" onClick={this.moveRight}>
+              <p> <i className="arrow right"></i></p>
+            </button>
           </div>
         </div>
         )
@@ -75,7 +126,15 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(null, mapStateToProps)(Card);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    editCard: (card => {
+      dispatch(editCard(card));
+    })
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card);
 
 
 

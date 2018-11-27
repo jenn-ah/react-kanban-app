@@ -18,7 +18,6 @@ class EditCard extends Component {
       createName: props.data.createName,
       assigned_to: props.data.assigned_to,
       assignName: props.data.assignName
-
     }
     //create binds here
 

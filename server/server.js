@@ -6,6 +6,7 @@ const adminRouter = require('./routes/admin');
 
 const app = express();
 
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/api/cards', cardsRouter);
@@ -23,7 +24,6 @@ app.get('/', (req, res) => {
       return res.status(400).send('An error ocurred');
     })
 });
-
 
 
 module.exports = app;

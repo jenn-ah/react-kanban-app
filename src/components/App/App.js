@@ -2,18 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './App.css';
 import Board from '../Board';
-//import AddCard from '../AddCard';
 import { loadCards } from '../../actions/cardActions';
 import FormModal from '../FormModal';
 import { setFormingTrue, setFormingFalse } from '../../actions/formingActions';
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-   // console.log('this first props', props);
+
   //create methods here
-  }
 
   componentDidMount() {
     console.log('CDM firing!');
@@ -32,10 +28,7 @@ class App extends Component {
         + NEW TASK
         </button>
         {/* <div className="columnContainer"> */}
-          {/* <Board data={this.props.cards} /> */}
           <Board cards={this.props.cards} />
-          
-          {/* <AddCard /> */}
         </div>
           </div>
       //  </div>
