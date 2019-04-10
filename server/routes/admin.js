@@ -5,12 +5,11 @@ const User = require('../db/models/User');
 router.get('/users', (req, res) => {
   return User.fetchAll({ withRelated: ['created', 'assigned'] })
     .then(users => {
-      // console.log('this is users route', users);
       return res.json(users);
     })
     .catch(err => {
       console.log('this is err', err);
-      return res.status(400).send('An error ocurred');
+      return res.status(400).send('An error occurred');
     })
 });
 

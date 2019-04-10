@@ -1,11 +1,3 @@
-/* .App {
-  text-align: center;
-} */
-
-/* .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-} */
 
 .App-header {
   margin-top: 20px;
@@ -70,11 +62,6 @@
   font-family: 'Roboto', sans-serif;
 }
 
-/* .columnDiv {
-  display: flex;
-flex-flow: row wrap;
-} */
-
 .columnContainer {
   padding: 0px;
   width: 1015px;
@@ -84,10 +71,6 @@ flex-flow: row wrap;
   flex-flow: row wrap;
   height: auto;
 }
-
-/* .column {
-
-} */
 
 .queueHolder {
   border-right: 1px solid rgb(75, 81, 89);
@@ -154,10 +137,6 @@ flex-flow: row wrap;
   border-bottom: 1px dotted black;
 }
 
-/* .createdByDiv:hover {
-  font-size: 10pt;
-} */
-
 .createdByDiv .createTipText {
   visibility: hidden;
   width: 120px;
@@ -219,35 +198,3 @@ input[type="text"] {
   width: 30px;
 }
 
-/* .oneCard i {
-  border: solid black;
-  border-width: 0 2px 2px 0;
-  padding: 3px;
-}
-
-.oneCard .right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
-
-.oneCard .left {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-} */
-
-/* .editFormInput {
-  align-self: right;
-  background: rgba(255,255,255,0.5);
-  border: 1px solid darkgray;
-  width: 120px;
-  height: 30px;
-} */
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

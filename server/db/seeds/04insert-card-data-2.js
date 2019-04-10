@@ -36,13 +36,3 @@ exports.seed = function(knex, Promise) {
     });
 };
 
-
-// id(Pk)	number	serial, not null, unique
-// title	string(255)	not null
-// body	string(1024)	not null
-// priority_id(Fk)	number	not null
-// status_id(Fk)	number	not null
-// created_by(Fk)	number	not null
-// assigned_to(Fk)	number	nullable
-// created_at	TS w/ TZ	not null
-// updated_at	TS w/ TZ	not null
