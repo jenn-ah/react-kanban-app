@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../db/models/User');
+const validator = require('validator');
 
 router.get('/users', (req, res) => {
   return User.fetchAll({ withRelated: ['created', 'assigned'] })

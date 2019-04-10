@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Card = require('../db/models/Card');
+const validator = require('validator');
 //const Status = require('../db/models/Status');
 
 
