@@ -1,18 +1,40 @@
 import React from 'react';
-
 import Column from '../Column';
-import AddCard from '../AddCard';
+
 
 const Board = (props) => {
-  console.log('this is board props', props);
+ // console.log('this is board props', props);
 
   return (
-    <ul>
-      <Column title="Queue" data={props.data} />
-      <Column title="In Progress" data={props.data} />
-      <Column title="Done" data={props.data} />
-      <AddCard addCard={props.addCard} />
-    </ul>
+    <div className="columnContainer">
+      <div className="queueHolder">
+      <div className="queueDiv">
+      <div className="titleHeader">                               
+        QUEUE
+      </div>
+        <Column id="1" title="Queue" cards={props.cards} />
+      </div>
+      </div>
+
+      <div className="progressHolder">
+      <div className="progressDiv">
+      <div className="titleHeader"> 
+        IN PROGRESS
+      </div>
+        <Column id="2" title="In Progress" cards={props.cards} />
+      </div>
+      </div>
+
+      <div className="doneHolder">
+      <div className="doneDiv">
+      <div className="titleHeader"> 
+        DONE
+      </div>
+        <Column id="3" title="Done" cards={props.cards} />
+      </div>
+      </div>
+   
+    </div>
   )
 }
 

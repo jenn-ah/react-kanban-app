@@ -1,32 +1,200 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
 
 .App-header {
-  background-color: #282c34;
-  min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 15px;
+  font-size: 9pt;
+  padding: 10px;
+  width: 990px;
+  background-color: rgb(75, 81, 89);
   color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.newTaskHeader {
+  margin-top: -4px;
+  margin-right: -3px;
+  float: right;
+  color: white;
+  font-size: 8pt;
+  border: 1px solid lightgray;
+  padding: 5px;
+  background-color: rgb(75, 81, 89);
+  font-family: 'Roboto', sans-serif;
+}
+
+.titleHeader {
+  font-size: 9pt;
+  padding: 10px;
+  margin-top: -35px;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 110px;
+}
+
+.btnz {
+  background: none;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+}
+
+.btnz:hover {
+  background: rgba(255,255,255,0.5);
+  color: black;
+  font-size: 9pt;
+  font-family: 'Roboto', sans-serif;
+  transition-duration: 0.3s;
+}
+
+.idDiv {
+  display: none;
+}
+
+.cardStats {
+  font-size: 8pt;
+  font-family: 'Roboto', sans-serif;
 }
 
 .App-link {
   color: #61dafb;
+  font-family: 'Roboto', sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.columnContainer {
+  padding: 0px;
+  width: 1015px;
+  justify-content: space-between;
+  margin-left: -12px;
+  display: flex;
+  flex-flow: row wrap;
+  height: auto;
 }
+
+.queueHolder {
+  border-right: 1px solid rgb(75, 81, 89);
+  height: 700px;
+}
+
+.queueDiv {
+  font-size: 10pt;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 50px;
+  margin-right: 15px;
+  color: black;
+}
+
+.queueDiv .oneCard {
+  background-color: #ffe6cc;
+  border: 1px solid #ffbf80;
+}
+
+.progressHolder {
+  border-right: 1px solid rgb(75, 81, 89);
+}
+
+.progressDiv {
+  font-size: 10pt;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 50px;
+  margin-right:15px;
+  color: black;
+}
+
+.progressDiv .oneCard {
+  background-color: #ccffeb;
+  border: 1px solid #00ff99;
+}
+
+.doneDiv {
+  font-size: 10pt;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 50px;
+  color: black;
+}
+
+.doneDiv .oneCard {
+  background-color: #f2f2f2;
+  border: 1px solid #bfbfbf;
+}
+
+.oneCard {
+  border: 1px solid;
+  width: 290px;
+  height: auto;
+  padding: 8px;
+  margin: 5px;
+  border-radius: 3px;
+  color: black;
+}
+
+.createdByDiv {
+  font-size: 8pt;
+  font-family: 'Roboto', sans-serif;
+  float: right;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.createdByDiv .createTipText {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgb(75, 81, 89);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+}
+
+.createdByDiv:hover .createTipText {
+  visibility: visible;
+}
+
+.dropDowns {
+  width: 120px;
+  background: rgba(255,255,255,0.5);
+}
+
+.add-card-form {
+  text-align: center;
+  padding: 15px;
+  width: 500px;
+  margin-left: 0px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
+  border: 1px solid lightslategray;
+
+}
+
+input[type="text"] {
+  align-self: right;
+  font-family: 'Roboto', sans-serif;
+  background: rgba(255,255,255,0.5);
+  border: 1px solid darkgray;
+  width: 120px;
+  height: 15px;
+}
+
+.moveCard {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -5px;
+}
+
+.formModalDiv {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+}
+
+.closeModalBtn {
+  height: 30px;
+  width: 30px;
+}
+

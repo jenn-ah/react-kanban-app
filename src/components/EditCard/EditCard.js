@@ -1,25 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addCard } from '../../actions/cardActions';
+import { editCard } from '../../actions/cardActions';
 
-class AddCard extends Component {
+class EditCard extends Component {
   constructor(props) {
     super(props);
 
+   // console.log('this editCard this.props', props.data);
+
     this.state = {
-      id: 0,
-      title: '',
-      body: '',
-      priority_id: '',
-      status_id: '',
-      created_by: '',
-      assigned_to: ''
+      id: props.data.id,
+      title: props.data.title,
+      body: props.data.body,
+      priority_id: props.data.priority_id,
+      status_id: props.data.status_id,
+      created_by: props.data.created_by,
+      createName: props.data.createName,
+      assigned_to: props.data.assigned_to,
+      assignName: props.data.assignName
     }
     //create binds here
+
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.addNewCard = this.addNewCard.bind(this);
+    this.editNewCard = this.editNewCard.bind(this);
   }
   //methods here
+
   handleInputChange(event) {
     switch (event.target.id) {
       case 'title':
@@ -51,36 +57,35 @@ class AddCard extends Component {
     }
   }
 
-  addNewCard(event) {
+  editNewCard(event) {
     event.preventDefault();
-
     const data = {
       id: this.state.id,
       title: this.state.title,
       body: this.state.body,
-      priority_id: this.state.priority_id,
-      status_id: this.state.status_id,
+      priority: this.state.priority_id,
+      status: this.state.status_id,
       created_by: this.state.created_by,
       assigned_to: this.state.assigned_to
     }
-      this.props.addCard(data);
+    //console.log('this editnewcard data', data);
+      this.props.editCard(data);
   }
 
   render() {
 
     return (
-      <div className="add-card-form">
-      <h3>Add New Task</h3>
+      <div className="edit-card-form">
         <div className="idDiv">
         <input readOnly type="text" id="id" value={this.state.id} />
         </div>
         Title:
         <br />
-        <input type="text" id="title" value={this.state.title} onChange={this.handleInputChange} />
+        <input type="text" id="title" className="editFormInput" value={this.state.title} onChange={this.handleInputChange} />
         <br />
         Body:
         <br />
-        <input type="text" id="body" value={this.state.body} onChange={this.handleInputChange} />
+        <input type="text" id="body" className="editFormInput" value={this.state.body} onChange={this.handleInputChange} />
         <br />
         Priority:
         <br />
@@ -89,6 +94,7 @@ class AddCard extends Component {
             value={this.state.priority_id}
             onChange={this.handleInputChange}
           >
+            {/* <option value={this.state.priority_id}>{this.state.priority_id}</option> */}
             <option value="1">Low</option>
             <option value="2">Medium</option>
             <option value="3">High</option>
@@ -103,6 +109,7 @@ class AddCard extends Component {
             value={this.state.status_id}
             onChange={this.handleInputChange}
           >
+            {/* <option value={this.state.status_id}>{this.state.status_id}</option> */}
             <option value="1">Queue</option>
             <option value="2">In Progress</option>
             <option value="3">Done</option>
@@ -129,6 +136,7 @@ class AddCard extends Component {
             value={this.state.assigned_to}
             onChange={this.handleInputChange}
           >
+            {/* <option value="">Assigned To </option> */}
             <option value="1">Johnny</option>
             <option value="2">Sid</option>
             <option value="3">Glen</option>
@@ -137,8 +145,8 @@ class AddCard extends Component {
           </select>
         <br />
         <br />
-        <button className="btnz" onClick={this.addNewCard}>
-          Add Card
+        <button className="btnz" onClick={this.editNewCard}>
+          Update Card
         </button>
       </div>
     );
@@ -147,10 +155,10 @@ class AddCard extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addCard: (card => {
-      dispatch(addCard(card));
+    editCard: (card => {
+      dispatch(editCard(card));
     })
   }
 }
 
-export default connect(null, mapDispatchToProps)(AddCard);
+export default connect(null, mapDispatchToProps)(EditCard);

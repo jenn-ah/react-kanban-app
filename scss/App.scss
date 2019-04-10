@@ -1,0 +1,169 @@
+/* .App {
+  text-align: center;
+} */
+
+/* .App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+} */
+
+.App-header {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 15px;
+    font-size: 8pt;
+    padding: 10px;
+    width: 990px;
+    background-color: rgb(75, 81, 89);
+    color: white;
+  
+  }
+  
+  .newTaskHeader {
+    margin-top: -4px;
+    margin-right: -3px;
+    float: right;
+    color: white;
+    font-size: 8pt;
+    border: 1px solid lightgray;
+    padding: 5px;
+  }
+  
+  .titleHeader {
+    display: inline;
+  }
+  
+  .btnz {
+    background: none;
+    border: none;
+  }
+  
+  .btnz:hover {
+    background: rgba(255,255,255,0.5);
+    color: black;
+    font-size: 9pt;
+    /* border: 1px solid darkgrey;  */
+    transition-duration: 0.3s;
+    /* box-shadow: 0 7px 6px 0 rgba(0,0,0,0.10), 0 7px 5px 0 rgba(0,0,0,0.10); */
+  }
+  
+  .idDiv {
+    display: none;
+  }
+  
+  .cardStats {
+    font-size: 8pt;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  .columnDiv {
+    display: flex;
+  flex-flow: row wrap;
+  }
+  
+  /* .columnContainer {
+  display: flex;
+  flex-flow: row wrap;
+  } */
+  
+  .queueDiv {
+    margin-left: -45px;
+    font-size: 11pt;
+    display: inline-block;
+    border-radius: 3px;
+    margin-top: 30px;
+    margin-right: 27px;
+    padding: 8px;
+    width: 295px;
+    color: black;
+    background-color: #ffe6cc;
+    border: 1px solid #ffbf80;
+  }
+  
+  .progressDiv {
+    font-size: 11pt;
+    display: inline-block;
+    border-radius: 3px;
+    margin-top: 30px;
+    margin-right:27px;
+    padding: 8px;
+    width: 295px;
+    color: black;
+    background-color: #ccffeb;
+    border: 1px solid #00ff99;
+  }
+  
+  .doneDiv {
+    font-size: 11pt;
+    display: inline-block;
+    border-radius: 3px;
+    margin-top: 30px;
+    /* margin: 4px; */
+    padding: 8px;
+    width: 295px;
+    color: black;
+    background-color: #f2f2f2;
+    border: 1px solid #bfbfbf;
+  }
+  
+  .oneCard {
+    border: 1px solid;
+    width: 290px;
+    height: auto;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 3px;
+  }
+  
+  .createdByDiv {
+    font-size: 8pt;
+    float: right;
+  }
+  
+  .dropDowns {
+    width: 120px;
+    background: rgba(255,255,255,0.5);
+  }
+  
+  .add-card-form {
+  
+    padding: 15px;
+    width: 500px;
+    margin-left: 0px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    color: black;
+    background-color: #e6f2ff;
+    border: 1px solid #99ccff;
+    align-content: center;
+  }
+  
+  input[type="text"] {
+    align-self: right;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid darkgray;
+    width: 120px;
+    height: 15px;
+  }
+  
+  /* .editFormInput {
+    align-self: right;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid darkgray;
+    width: 120px;
+    height: 30px;
+  } */
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

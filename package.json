@@ -2,12 +2,28 @@
   "name": "react-kanban-app",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8989",
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "bookshelf": "^0.13.3",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "knex": "^0.15.2",
+    "method-override": "^3.0.0",
+    "pg": "^7.6.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "react-redux": "^5.1.1",
+    "react-scripts": "2.1.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
+    "dev": "./node_modules/.bin/nodemon ./server/index.js --watch ./server/",
+    "db:migrate": "POSTGRES_HOSTNAME=localhost ./node_modules/.bin/knex migrate:latest",
+    "db:rollback": "POSTGRES_HOSTNAME=localhost ./node_modules/.bin/knex migrate:rollback",
+    "db:seed": "POSTGRES_HOSTNAME=localhost ./node_modules/.bin/knex seed:run",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -21,5 +37,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.2",
+    "nodemon": "^1.18.6"
+  }
 }

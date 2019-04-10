@@ -1,77 +1,63 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './App.css';
 import Board from '../Board';
+import { loadCards } from '../../actions/cardActions';
+import FormModal from '../FormModal';
+import { setFormingTrue, setFormingFalse } from '../../actions/formingActions';
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      currentId: 104,
-      tasks: [{
-        card_id: 100,
-        title: 'Write a Book',
-        body: 'Thinking about writing a book, need to carve out some time in my day to make this happen.',
-        priority: 'medium',
-        status: 'In Progress',
-        created_by: 'Person NumberOne',
-        assigned_to: 'Staff Number1'
-      },
-      {
-        card_id: 101,
-        title: 'Start a Blog',
-        body: 'Want to start a blog and need to carve out some time in my day to make this happen.',
-        priority: 'low',
-        status: 'Done',
-        created_by: 'Person NumberTwo',
-        assigned_to: 'Staff Number2'
-      },
-      {
-        card_id: 102,
-        title: 'Opening up a Business',
-        body: 'Setting up the grand opening of my new store, need to carve out some time in my day to make this happen.',
-        priority: 'high',
-        status: 'In Progress',
-        created_by: 'Person NumberThree',
-        assigned_to: 'Staff Number3'
-      },
-      {
-        card_id: 103,
-        title: 'Help with homework',
-        body: 'Stuck on some problems on my homework, need to carve out some time in my day to make this happen.',
-        priority: 'low',
-        status: 'Queue',
-        created_by: 'Person NumberFour',
-        assigned_to: 'unassigned'
-      },
-      ]
-    }
-    //create binds here
-    this.addCard = this.addCard.bind(this);
-  }
   //create methods here
-  addCard({ title, body, priority, status, created_by, assigned_to }) {
-    const card_id = this.state.currentId;
-    const { tasks } = this.state;
 
-    const newCard = { card_id, title, body, priority, status, created_by, assigned_to };
-
-    this.setState({
-      currentId: card_id + 1,
-      tasks: [...tasks, newCard]
-    });
+  componentDidMount() {
+    console.log('CDM firing!');
+    this.props.loadCards();
   }
 
   render() {
-
+  //console.log('this.props in APP', this.props)
+   const isForming = this.props.isForming.isForming;
     return (
-      <div className="App-header">
-        <h1>Kanban Board</h1>
-        <Board data={this.state.tasks} />
-      </div>
+       <div>
+          <FormModal isForming={isForming} hideFormHandler={this.props.hideAddForm}/>
+       <div className="App-header">
+        KANBAN
+        <button className="newTaskHeader" onClick={this.props.showAddForm}>
+        + NEW TASK
+        </button>
+        {/* <div className="columnContainer"> */}
+          <Board cards={this.props.cards} />
+        </div>
+          </div>
+      //  </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  //console.log('mapstate state', state);
+  return {
+    cards: state,
+    isForming: state.isForming
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadCards: () => {
+      dispatch(loadCards());
+    },
+    showAddForm: () => {
+      dispatch(setFormingTrue());
+    },
+    hideAddForm: () => {
+      dispatch(setFormingFalse());
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+//invoking connection function, returns function, App is immediately invoked; referred to as higher-order component;
+
